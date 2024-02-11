@@ -1,28 +1,32 @@
 ---
-import { playlists, type Playlist } from '@/lib/data';
-import Layout from '@/layouts/Layout.astro';
-import PlayListItemCard from '@/components/PlayListItemCard.astro';
-
-import Greetings from '@/components/svelte/Greetings.svelte'
+import { playlists, type Playlist } from "@/lib/data";
+import Layout from "@/layouts/Layout.astro";
+import PlayListItemCard from "@/components/PlayListItemCard.astro";
+import Greetings from "@/components/svelte/Greetings.svelte";
 ---
 
 <Layout title="Spotify Clone">
-	<div 
-		id="playlist-container"
-		class="relative transition-all duration-1000 bg-green-600">
+  <div
+    id="playlist-container"
+    class="relative transition-all duration-1000 bg-green-600"
+  >
+    <!-- Page Header -->
+    <div class="relative z-10 px-6 pt-10">
+      <!-- Greetings -->
+      <Greetings />
 
-		<!-- Page Header -->
-		<div class="relative z-10 px-6 pt-10">
-			<!-- Greetings -->
-			<Greetings />
+      <div class="flex flex-wrap mt-6 gap-4">
+        {
+          playlists.map((playlist: Playlist) => (
+            <PlayListItemCard playlist={playlist} />
+          ))
+        }
+      </div>
+    </div>
 
-			<div class="flex flex-wrap mt-6 gap-4">
-				{playlists.map((playlist: Playlist) => <PlayListItemCard playlist={playlist}  />)}
-			</div>
-		</div>
-
-		<div
-			class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80">
-		</div>
-	</div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80"
+    >
+    </div>
+  </div>
 </Layout>

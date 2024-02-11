@@ -3,19 +3,19 @@
   const currentTime = new Date()
   const currentHour = currentTime.getHours()
 
-  let gretting = ""
+  let greeting: string = ""
 
   if (currentHour < 12) {
-    gretting = "Good Morning"
+    greeting = "Good Morning"
   } else if (currentHour < 18){
-    gretting = "Good Afternoon"
+    greeting = "Good Afternoon"
   } else {
-    gretting = "Good Evening"
+    greeting = "Good Evening"
   }
 
 
 </script>
 
 <h1 class="text-3xl font-bold">
-  {gretting}
+  {greeting}
 </h1>
