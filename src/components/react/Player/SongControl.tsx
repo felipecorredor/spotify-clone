@@ -50,7 +50,7 @@ const SongControl = ({ audio }: SongControlProp) => {
         max={duration}
         min={0}
         value={[currentTime]}
-        className="w-[400px]"
+        className="w-[600px]"
         onValueChange={([value]) => {
           if (audio.current) {
             audio.current.currentTime = value;
