@@ -46,11 +46,9 @@ const Player = () => {
 
       <div className="grid place-content-center gap-4 flex-1">
         <div className="flex flex-col items-center justify-center">
-          <div className="flex gap-4">
-            <button className="bg-white rounded-full p-2" onClick={handleClick}>
-              {isPlaying ? <Pause /> : <Play />}
-            </button>
-          </div>
+          <button className="bg-white rounded-full p-2" onClick={handleClick}>
+            {isPlaying ? <Pause /> : <Play />}
+          </button>
           <SongControl audio={audioRef} />
           <audio ref={audioRef} />
         </div>
