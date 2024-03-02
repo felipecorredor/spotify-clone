@@ -1,3 +1,4 @@
+import { colors } from "@/lib/colors";
 import { Pause, Play } from "./IconsPlayer";
 import { usePlayerStore } from "@/store/PlayerStore";
 
